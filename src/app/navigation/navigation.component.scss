@@ -1,0 +1,67 @@
+@import "../../variables.scss";
+
+$paddingNav: 5px 24px;
+
+header {
+  background-color: rgba($re_gray, $alpha: 0.5);
+  width: 100%;
+  position: absolute;
+
+  .logo_cont {
+    font-size: x-large;
+    display: flex;
+    margin-top: 5px;
+    .logo {
+      background-image: url("../../photos/logoEstate.svg");
+      background-size: 128px;
+      background-repeat: no-repeat;
+      height: 40px;
+      width: 40px;
+      margin-right: 6px;
+      margin-top: 2px;
+      filter: invert(0.9);
+    }
+  }
+
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $paddingNav;
+    border-bottom: 1px solid rgba($re_creamy, $alpha: 0.3);
+
+    .topBar_container {
+      display: flex;
+    }
+  }
+
+  nav {
+    padding: 0px 24px;
+    ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-right: 20px;
+        min-width: 50px;
+        padding: 10px 0;
+        text-align: center;
+        a {
+          text-transform: capitalize;
+          color: $re_creamy;
+          text-decoration: none;
+          padding: 6px 0;
+
+          &.is-active {
+            border-bottom: 3px solid $re_white;
+            font-weight: 600;
+          }
+        }
+        a:hover {
+          color: $re_white;
+        }
+      }
+    }
+  }
+}

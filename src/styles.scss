@@ -1,1 +1,14 @@
+@import "./variables.scss";
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $re_main_blue;
+  height: 200vh;
+  color: $re_creamy;
+  font-family: system-ui;
+}
+
+p {
+  margin: 0;
+}
