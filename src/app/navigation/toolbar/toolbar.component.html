@@ -1,0 +1,30 @@
+<mat-toolbar  class="header" color="accent">
+  <mat-toolbar-row class="topBar">
+    <div class="logo_cont">
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="logo"></div>
+      <span>House of dreams</span>
+    </div>
+    <div class="topBar_container">
+      <app-timer-clock></app-timer-clock>
+      <app-theme-switcher 
+        [options]="options$ | async"
+        (themeChange)="themeChangeHandler($event)"
+      >
+      </app-theme-switcher>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row>      
+    <nav>
+      <div>
+        <a mat-button routerLinkActive="is-active" [routerLink]="'/home'"> Home </a>
+        <a mat-button routerLinkActive="is-active"  [routerLink]="'/properties'"> Properties </a>
+        <a mat-button routerLinkActive="is-active" [routerLink]="'/agents'"> Agents </a>
+        <a mat-button routerLinkActive="is-active"  [routerLink]="'/pages'"> Pages </a>
+        <a mat-button routerLinkActive="is-active"  [routerLink]="'/contact'"> Contact </a>
+      </div>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
