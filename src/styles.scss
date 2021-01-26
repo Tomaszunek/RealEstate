@@ -3,32 +3,6 @@
 
 @include mat-core();
 
-$real-estate-app-primary: mat-palette($mat-indigo, 600);
-$real-estate-app-accent: mat-palette($mat-blue, 600);
-$real-estate-warn: mat-palette($mat-red, 500);
-$real-estate-app-theme: mat-light-theme(
-  (
-    color: (
-      primary: $real-estate-app-primary,
-      accent: $real-estate-app-accent,
-      warn: $real-estate-warn,
-    ),
-  )
-);
-
-$real-estate-dark-primary: mat-palette($mat-indigo, 800);
-$real-estate-dark-accent: mat-palette($mat-blue, 800);
-$real-estate-dark-warn: mat-palette($mat-red, 600);
-$real-estate-dark-app-theme: mat-dark-theme(
-  (
-    color: (
-      primary: $real-estate-dark-primary,
-      accent: $real-estate-dark-accent,
-      warn: $real-estate-dark-warn,
-    ),
-  )
-);
-
 body {
   margin: 0;
   padding: 0;
