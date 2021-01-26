@@ -20,7 +20,6 @@ import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { ThemeService } from './services/theme.service';
-import { StyleManagerService } from './services/style-manager.service';
 
 import { AppMaterialModule } from './app-material.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -51,7 +50,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [ThemeService, StyleManagerService],
+  providers: [ThemeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -12,7 +12,7 @@ export class SideNavigationComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onSidenavClose = () => {
+  public onSidenavClose(): void {
     this.sideNavClose.emit();
-  };
+  }
 }

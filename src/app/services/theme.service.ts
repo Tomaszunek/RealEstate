@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-import { ThemeOption } from '../Models/ThemeOptions.model';
-import { StyleManagerService } from './style-manager.service';
 
 @Injectable()
 export class ThemeService {
-  constructor(
-    private http: HttpClient,
-    private styleManager: StyleManagerService
-  ) {}
+  constructor() {}
+  toggleTheme(): boolean {
+    const bodyElement = document.body;
+    const darkThemeClass = 'dark-theme';
 
-  getThemeOptions(): Observable<Array<ThemeOption>> {
-    return this.http.get<Array<ThemeOption>>('assets/themeOptions.json');
-  }
+    if (bodyElement) {
+      const bodyInDarkTheme = bodyElement.classList.contains(darkThemeClass);
+      const bodyClassList = bodyElement.classList;
 
-  setTheme(themeToSet) {
-    this.styleManager.setStyle(
-      'theme',
-      `assets/prebuilt-themes/${themeToSet}.css`
-    );
+      bodyInDarkTheme
+        ? bodyClassList.remove(darkThemeClass)
+        : bodyClassList.add(darkThemeClass);
+      return !bodyInDarkTheme;
+    }
   }
 }

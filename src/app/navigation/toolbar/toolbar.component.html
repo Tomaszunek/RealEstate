@@ -1,4 +1,4 @@
-<mat-toolbar  class="header" color="accent">
+<mat-toolbar  class="header" color="primary">
   <mat-toolbar-row class="topBar">
     <div class="logo_cont">
       <button mat-icon-button (click)="onToggleSidenav()">
@@ -9,11 +9,7 @@
     </div>
     <div class="topBar_container">
       <app-timer-clock></app-timer-clock>
-      <app-theme-switcher 
-        [options]="options$ | async"
-        (themeChange)="themeChangeHandler($event)"
-      >
-      </app-theme-switcher>
+      <app-theme-switcher></app-theme-switcher>
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row>      

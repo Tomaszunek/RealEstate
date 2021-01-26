@@ -1,19 +1,17 @@
-<body>
-  <mat-sidenav-container autosize>
-    <mat-sidenav #navigationSidenav mode="over" role="navigation">
-      <mat-toolbar>
-        <mat-toolbar-row>
-          <h2 class="toolbar-title"> House of dreams </h2>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <app-side-navigation (sideNavClose)="navigationSidenav.close()"></app-side-navigation>
-    </mat-sidenav>
-    <mat-sidenav-content role="main">
-      <main>
-        <app-toolbar (sidenavToggle)="navigationSidenav.toggle()"></app-toolbar>
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer></app-footer>    
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</body>
+<mat-sidenav-container autosize>
+  <mat-sidenav #navigationSidenav mode="over" role="navigation">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2 class="toolbar-title"> House of dreams </h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <app-side-navigation (sideNavClose)="navigationSidenav.close()"></app-side-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content role="main">
+    <main>
+      <app-toolbar (sidenavToggle)="navigationSidenav.toggle()"></app-toolbar>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>    
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -14,6 +14,7 @@ $paddingNav: 5px 24px;
   .logo_cont {
     font-size: x-large;
     display: flex;
+    align-items: center;
     margin-top: 5px;
     .logo {
       background-image: url("../../../photos/logoEstate.svg");
@@ -22,7 +23,7 @@ $paddingNav: 5px 24px;
       height: 40px;
       width: 40px;
       margin-right: 6px;
-      margin-top: 2px;
+      margin-top: 7px;
       filter: invert(0.9);
     }
   }
@@ -36,6 +37,7 @@ $paddingNav: 5px 24px;
 
     .topBar_container {
       display: flex;
+      align-items: center;
     }
   }
 

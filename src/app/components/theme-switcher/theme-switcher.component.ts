@@ -12,9 +12,11 @@ export class ThemeSwitcherComponent {
   @Input() options: Array<ThemeOption>;
   @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
 
+  public isDarkMode: Boolean = false;
+
   constructor(private themeService: ThemeService) {}
 
-  changeTheme(themeToSet) {
-    this.themeChange.emit(themeToSet);
+  changeTheme(): void {
+    this.isDarkMode = this.themeService.toggleTheme();
   }
 }
