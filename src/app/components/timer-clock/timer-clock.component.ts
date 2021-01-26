@@ -12,28 +12,28 @@ export class TimerClockComponent implements OnInit, OnDestroy {
   dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   public time: Date;
-  public secondsToDday: String;
-  public minutesToDday: String;
-  public hoursToDday: String;
-  public daysToDday: String;
+  public secondsToDday: string;
+  public minutesToDday: string;
+  public hoursToDday: string;
+  public daysToDday: string;
 
-  private getTimeDifference() {
+  private getTimeDifference(): void {
     this.time = new Date();
     this.allocateTimeUnits();
   }
 
-  private allocateTimeUnits() {
+  private allocateTimeUnits(): void {
     this.secondsToDday = this.addingToFullNumber(this.time.getSeconds());
     this.minutesToDday = this.addingToFullNumber(this.time.getMinutes());
     this.hoursToDday = this.addingToFullNumber(this.time.getHours());
     this.daysToDday = this.dayNames[this.time.getDay()];
   }
 
-  private addingToFullNumber(time: Number): String {
+  private addingToFullNumber(time: number): string {
     return time < 10 ? `0${time}` : String(time);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.time = new Date();
     this.allocateTimeUnits();
     this.subscription = interval(1000).subscribe(() => {
@@ -41,7 +41,7 @@ export class TimerClockComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }

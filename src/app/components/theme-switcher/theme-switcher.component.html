@@ -1,0 +1,8 @@
+<button 
+  mat-icon-button
+  aria-label="Change Theme Menu"
+  class="theme-switcher"
+  (click)="changeTheme()">
+  <mat-icon *ngIf="isDarkMode">nights_stay</mat-icon>
+  <mat-icon *ngIf="!isDarkMode">wb_sunny</mat-icon>  
+</button>

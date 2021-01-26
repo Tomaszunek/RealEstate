@@ -1,21 +1,17 @@
-<header>
-  <div class="topBar">
-    <div class="logo_cont">
-      <div class="logo"></div>
-      <span>House of dreams</span>
-    </div>
-    <div class="topBar_container">
-      <app-timer-clock></app-timer-clock>
-      <div class="topBar__themeSwitcher">TS</div>
-    </div>
-  </div>
-  <nav>
-    <ul>
-      <li><a routerLinkActive="is-active" routerLink="/home">Home</a></li>
-      <li><a routerLinkActive="is-active" routerLink="/properties">Properties</a></li>
-      <li><a routerLinkActive="is-active" routerLink="/agents">Agents</a></li>
-      <li><a routerLinkActive="is-active" routerLink="/pages">Pages</a></li>
-      <li><a routerLinkActive="is-active" routerLink="/contact">Contact</a></li>
-    </ul>
-  </nav>  
-</header>
+<mat-sidenav-container autosize>
+  <mat-sidenav #navigationSidenav mode="over" role="navigation">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2 class="toolbar-title"> House of dreams </h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <app-side-navigation (sideNavClose)="navigationSidenav.close()"></app-side-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content role="main">
+    <main>
+      <app-toolbar (sidenavToggle)="navigationSidenav.toggle()"></app-toolbar>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>    
+  </mat-sidenav-content>
+</mat-sidenav-container>

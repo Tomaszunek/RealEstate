@@ -1,0 +1,61 @@
+@import "../../../variables.scss";
+
+$paddingNav: 5px 24px;
+
+.header {
+  background-color: rgba($re_gray, $alpha: 0.5);
+  width: 100%;
+  position: absolute;
+
+  .mat-toolbar-row {
+    height: 54px;
+  }
+
+  .logo_cont {
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    .logo {
+      background-image: url("../../../photos/logoEstate.svg");
+      background-size: 128px;
+      background-repeat: no-repeat;
+      height: 40px;
+      width: 40px;
+      margin-right: 6px;
+      margin-top: 7px;
+      filter: invert(0.9);
+    }
+  }
+
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $paddingNav;
+    border-bottom: 1px solid rgba($re_creamy, $alpha: 0.3);
+
+    .topBar_container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  nav {
+    a {
+      text-transform: capitalize;
+      color: $re_creamy;
+      text-decoration: none;
+      padding: 6px 20px;
+
+      &.is-active {
+        border-bottom: 3px solid $re_white;
+        font-weight: 600;
+        border-radius: 0;
+      }
+    }
+    a:hover {
+      color: $re_white;
+    }
+  }
+}

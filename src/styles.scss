@@ -1,5 +1,8 @@
+@import "~@angular/material/theming";
 @import "./variables.scss";
-/* You can add global styles to this file, and also import other style files */
+
+@include mat-core();
+
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +14,31 @@ body {
 
 p {
   margin: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @include angular-material-theme($real-estate-app-theme);
+
+  $dark-foreground-palette: map-get($real-estate-app-theme, background);
+
+  .header {
+    background-color: rgba(
+      mat-color($real-estate-app-primary, default),
+      0.5
+    ) !important;
+  }
+
+  &.dark-theme {
+    @include angular-material-theme($real-estate-dark-app-theme);
+
+    .header {
+      background-color: rgba(
+        mat-color($real-estate-dark-primary, default),
+        0.5
+      ) !important;
+    }
+  }
 }
